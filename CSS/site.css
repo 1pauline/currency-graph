@@ -1,0 +1,73 @@
+:root {
+    --bg-color-header: rgb(37, 111, 129); 
+    --bg-color-body: lightseagreen;
+    --bg-color-body-odd: rgb(63, 81, 83);
+    --bg-color-body-even: rgb(51, 91, 110);
+    --font-color: white; 
+    --font-size: 16pt; 
+    --font-size-hover: 20pt;
+    --pg-spacing: 100px;
+    --margin-body-BarChart: 25px;  
+    --margin-body-BarChart-bar: 5px; 
+}
+
+div {
+    height: 40%; 
+    /*width: 40; #transition doesn't work when width is listed */
+}
+
+.Container {
+    position: absolute;
+}
+
+h1 {
+    color: var(--font-color);
+    background-color: var(--bg-color-header);
+    padding-left: var(--pg-spacing);
+    padding-right: var(--pg-spacing);
+    margin: 0;
+}
+
+.BarChart-header {
+    align-self: flex-start;
+}
+
+.BarChart-bar:nth-of-type(odd) {
+    background-color: var(--bg-color-body-odd);
+    margin-left: var(--margin-body-BarChart-bar);
+    margin-right: var(--margin-body-BarChart-bar);
+}
+
+div:nth-of-type(even) {
+    background-color: var(--bg-color-body-even);
+}
+
+.BarChart {
+    display: flex;
+    align-items: flex-end;
+    /* align-content: flex-start; */
+    /* justify-content: space-between; */
+    font-size: var(--font-size);
+    color: var(--font-color);
+    background-color: var(--bg-color-body);
+    width: 90%;
+    height: 90%;
+    min-width: 75px;
+    padding-top: 50px;
+    padding-left: var(--margin-body-BarChart);
+    padding-right: var(--margin-body-BarChart);
+    position: relative; 
+    transition-duration: 0.5s;
+}
+
+/* Upon hovering the mouse over the bar-chart, 
+the font size will increase over 0.5 seconds. */
+.BarChart:hover {
+    font-size: var(--font-size-hover);
+}
+
+.BarChart-bar {
+    text-align: center;
+    /* max-width: 40px; */
+    /*width: 50px;*/
+}
